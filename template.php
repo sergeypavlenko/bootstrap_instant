@@ -97,3 +97,14 @@ function bootstrap_instant_preprocess_node(&$variables) {
     $variables['classes_array'][] = 'gallery';
   }
 }
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function bootstrap_instant_html_head_alter(&$head_elements) {
+  if (isset($head_elements['system_meta_content_type'])) {
+    $head_elements['system_meta_content_type']['#attributes'] = array(
+      'charset' => 'utf-8',
+    );
+  }
+}
