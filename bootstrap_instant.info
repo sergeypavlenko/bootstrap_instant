@@ -17,3 +17,26 @@ regions[footer_second]  = 'Footer secondary'
 regions[footer_third]   = 'Footer third'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Theme Settings
+;;;;;;;;;;;;;;;;;;;;;
+
+; Header info
+; --------------
+settings[front_header_line1] = HELLO PEOPLE, MY NAME IS
+settings[front_header_line2] = PAUL SILVA
+settings[front_header_line3] = WEB DESIGNER, DEVELOPER & GAME ADDICT
+
+; Social links
+; --------------
+settings[social_dribbble] = https://dribbble.com
+settings[social_facebook] = https://www.facebook.com
+settings[social_twitter] = https://twitter.com
+settings[social_linkedin] = https://www.linkedin.com
+settings[social_instagram] = http://instagram.com
+settings[social_tumblr] = https://www.tumblr.com
+
+; Advanced
+; --------------
+settings[bootstrap_cdn] = 3.1.1
