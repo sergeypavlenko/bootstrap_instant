@@ -108,3 +108,10 @@ function bootstrap_instant_html_head_alter(&$head_elements) {
     );
   }
 }
+
+/**
+ * Implements hook_menu_tree__MENUNAME().
+ */
+function bootstrap_instant_menu_tree__primary(&$variables) {
+  return '<ul class="menu nav navbar-nav navbar-right">' . $variables['tree'] . '</ul>';
+}
