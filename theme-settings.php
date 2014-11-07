@@ -41,4 +41,46 @@ function bootstrap_instant_form_system_theme_settings_alter(&$form, $form_state,
     '#title' => t('Third line'),
     '#default_value' => theme_get_setting('front_header_line3'),
   );
+
+  $form['social_buttons'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Social buttons'),
+    '#group' => 'instant_vertical_tabs',
+  );
+
+  $form['social_buttons']['social_dribbble'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Dribbble'),
+    '#default_value' => theme_get_setting('social_dribbble'),
+  );
+
+  $form['social_buttons']['social_facebook'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook'),
+    '#default_value' => theme_get_setting('social_facebook'),
+  );
+
+  $form['social_buttons']['social_twitter'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter'),
+    '#default_value' => theme_get_setting('social_twitter'),
+  );
+
+  $form['social_buttons']['social_linkedin'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Linkedin'),
+    '#default_value' => theme_get_setting('social_linkedin'),
+  );
+
+  $form['social_buttons']['social_instagram'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Instagram'),
+    '#default_value' => theme_get_setting('social_instagram'),
+  );
+
+  $form['social_buttons']['social_tumblr'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Tumblr'),
+    '#default_value' => theme_get_setting('social_tumblr'),
+  );
 }
