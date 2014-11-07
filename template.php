@@ -85,3 +85,15 @@ function bootstrap_instant_preprocess_page(&$variables) {
 
   $variables['social_button'] = $social_url;
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bootstrap_instant_preprocess_node(&$variables) {
+  if ($variables['type'] == 'article' && !$variables['page']) {
+    $variables['classes_array'][] = 'col-lg-4';
+    $variables['classes_array'][] = 'col-md-4';
+    $variables['classes_array'][] = 'col-sm-4';
+    $variables['classes_array'][] = 'gallery';
+  }
+}
