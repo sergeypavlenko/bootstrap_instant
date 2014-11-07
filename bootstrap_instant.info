@@ -2,3 +2,18 @@ name = Bootstrap Instant
 description = A Bootstrap Instant sub-theme.
 core = 7.x
 base theme = bootstrap
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[footer_first]   = 'Footer primary'
+regions[footer_second]  = 'Footer secondary'
+regions[footer_third]   = 'Footer third'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
