@@ -40,3 +40,11 @@ settings[social_tumblr] = https://www.tumblr.com
 ; Advanced
 ; --------------
 settings[bootstrap_cdn] = 3.1.1
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = assets/css/style.css
+stylesheets[all][] = assets/css/font-awesome.min.css
+stylesheets[all][] = assets/css/theme.css
