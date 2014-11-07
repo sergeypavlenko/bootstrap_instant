@@ -2,7 +2,8 @@ INSTALLATION
 ------------
 
 1. Install base theme - Bootstrap ( https://www.drupal.org/project/bootstrap )
-2. Create text field "field_project_role" and "field_project_type" for node type "article".
+2. Create text field "field_project_role" and "field_project_type" for
+   node type "article".
 3. Create image field "field_images" for node type "article".
 4. Create image field "field_header_image" for node type "page".
 5. Install theme "Bootstrap Instant"
