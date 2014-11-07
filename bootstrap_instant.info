@@ -1,0 +1,4 @@
+name = Bootstrap Instant
+description = A Bootstrap Instant sub-theme.
+core = 7.x
+base theme = bootstrap
