@@ -52,7 +52,7 @@ function bootstrap_instant_preprocess_page(&$variables) {
     }
   }
 
-  if (!isset($title) && drupal_is_front_page()) {
+  if (drupal_is_front_page()) {
     $type = theme_get_setting('front_header_line1');
     $title = theme_get_setting('front_header_line2');
     $role = theme_get_setting('front_header_line3');
