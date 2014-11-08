@@ -53,6 +53,7 @@ function bootstrap_instant_preprocess_page(&$variables) {
   }
   else {
     $title = drupal_get_title();
+    $role = !empty($variables['tabs']) ? render($variables['tabs']) : '';
   }
 
   if (drupal_is_front_page()) {
