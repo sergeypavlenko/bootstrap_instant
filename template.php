@@ -51,6 +51,9 @@ function bootstrap_instant_preprocess_page(&$variables) {
       }
     }
   }
+  else {
+    $title = drupal_get_title();
+  }
 
   if (drupal_is_front_page()) {
     $type = theme_get_setting('front_header_line1');
