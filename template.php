@@ -119,3 +119,19 @@ function bootstrap_instant_html_head_alter(&$head_elements) {
 function bootstrap_instant_menu_tree__primary(&$variables) {
   return '<ul class="menu nav navbar-nav navbar-right">' . $variables['tree'] . '</ul>';
 }
+
+/**
+ * Implements theme_menu_local_tasks().
+ */
+function bootstrap_instant_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="tabs--primary nav">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+
+  return $output;
+}
