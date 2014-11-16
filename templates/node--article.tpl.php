@@ -94,12 +94,16 @@
   <?php else: ?>
     <div class="content"<?php print $content_attributes; ?>>
       <div class="col-lg-8 col-lg-offset-2">
-        <h4><?php print $content['body']['#title']; ?></h4>
-        <?php print render($content['body']); ?>
+        <?php if (isset($full_text)): ?>
+          <h4><?php print $full_text_title; ?></h4>
+          <?php print $full_text; ?>
+        <?php endif; ?>
       </div>
 
-      <div class="col-lg-10 col-lg-offset-1 mt">
-        <?php print render($content['field_images']); ?>
+      <div class="col-lg-10 col-lg-offset-1 mt field-portfolio-images">
+        <?php if (isset($full_images)): ?>
+          <?php print $full_images; ?>
+        <?php endif; ?>
       </div>
     </div>
   <?php endif; ?>
