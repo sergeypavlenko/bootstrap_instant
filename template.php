@@ -98,11 +98,27 @@ function bootstrap_instant_preprocess_page(&$variables) {
  * Implements hook_preprocess_page().
  */
 function bootstrap_instant_preprocess_node(&$variables) {
-  if ($variables['type'] == 'article' && !$variables['page']) {
-    $variables['classes_array'][] = 'col-lg-4';
-    $variables['classes_array'][] = 'col-md-4';
-    $variables['classes_array'][] = 'col-sm-4';
-    $variables['classes_array'][] = 'gallery';
+  if ($variables['type'] == 'article') {
+    if ($variables['page']) {
+      $node = $variables['node'];
+      $field_text = theme_get_setting('article_node_view_text');
+      $field_images = theme_get_setting('article_node_view_images');
+
+      if (isset($node->{$field_text})) {
+        $variables['full_text_title'] = $variables['content'][$field_text]['#title'];
+        $variables['full_text'] = render($variables['content'][$field_text]);
+      }
+
+      if (isset($node->{$field_images})) {
+        $variables['full_images'] = render($variables['content'][$field_images]);
+      }
+    }
+    else {
+      $variables['classes_array'][] = 'col-lg-4';
+      $variables['classes_array'][] = 'col-md-4';
+      $variables['classes_array'][] = 'col-sm-4';
+      $variables['classes_array'][] = 'gallery';
+    }
   }
 }
 
