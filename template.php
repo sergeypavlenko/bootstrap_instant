@@ -29,8 +29,10 @@ function bootstrap_instant_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node = $variables['node'];
 
-    if (isset($node->field_header_image['und'][0]['uri'])) {
-      $header_image = $node->field_header_image['und'][0]['uri'];
+    $field_header = theme_get_setting('header_image');
+
+    if (isset($node->{$field_header}['und'][0]['uri'])) {
+      $header_image = $node->{$field_header}['und'][0]['uri'];
       $image_url = file_create_url($header_image);
       drupal_add_css('#headerwrap { background: url(' . $image_url . ') no-repeat center top; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }', array(
         'type' => 'inline',
@@ -41,13 +43,15 @@ function bootstrap_instant_preprocess_page(&$variables) {
 
     if ($node->type == 'article') {
       $title = $node->title;
+      $line1 = theme_get_setting('header_line1');
+      $line3 = theme_get_setting('header_line3');
 
-      if (isset($node->field_project_role['und'][0]['safe_value'])) {
-        $role = $node->field_project_role['und'][0]['safe_value'];
+      if (isset($node->{$line1}['und'][0]['safe_value'])) {
+        $role = $node->{$line1}['und'][0]['safe_value'];
       }
 
-      if (isset($node->field_project_type['und'][0]['safe_value'])) {
-        $type = $node->field_project_type['und'][0]['safe_value'];
+      if (isset($node->{$line3}['und'][0]['safe_value'])) {
+        $type = $node->{$line3}['und'][0]['safe_value'];
       }
     }
   }
