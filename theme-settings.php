@@ -112,4 +112,24 @@ function bootstrap_instant_form_system_theme_settings_alter(&$form, $form_state,
     '#title' => t('Tumblr'),
     '#default_value' => theme_get_setting('social_tumblr'),
   );
+
+  $form['node_view'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Article node view'),
+    '#group' => 'instant_vertical_tabs',
+  );
+
+  $form['node_view']['article_node_view_text'] = array(
+    '#type' => 'select',
+    '#title' => t('Field with full article'),
+    '#options' => $fields,
+    '#default_value' => theme_get_setting('article_node_view_text'),
+  );
+
+  $form['node_view']['article_node_view_images'] = array(
+    '#type' => 'select',
+    '#title' => t('Field with images'),
+    '#options' => $fields,
+    '#default_value' => theme_get_setting('article_node_view_images'),
+  );
 }
