@@ -24,9 +24,12 @@ regions[page_bottom]    = 'Page bottom'
 
 ; Header info
 ; --------------
+settings[header_image] = 'field_image'
 settings[front_header_line1] = 'HELLO PEOPLE, MY NAME IS'
+settings[header_line1] = 'body'
 settings[front_header_line2] = 'PAUL SILVA'
 settings[front_header_line3] = 'WEB DESIGNER, DEVELOPER & GAME ADDICT'
+settings[header_line3] = 'body'
 
 ; Social links
 ; --------------
