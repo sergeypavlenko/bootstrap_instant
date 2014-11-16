@@ -40,6 +40,11 @@ settings[social_linkedin] = 'https://www.linkedin.com'
 settings[social_instagram] = 'http://instagram.com'
 settings[social_tumblr] = 'https://www.tumblr.com'
 
+; Node view
+; --------------
+settings[article_node_view_text] = 'body'
+settings[article_node_view_images] = 'field_image'
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
