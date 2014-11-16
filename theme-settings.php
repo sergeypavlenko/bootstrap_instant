@@ -18,28 +18,57 @@ function bootstrap_instant_form_system_theme_settings_alter(&$form, $form_state,
     '#prefix' => '<h2><small>' . t('Instant settings') . '</small></h2>',
   );
 
-  $form['front_header'] = array(
+  $form['header'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Header on home page'),
+    '#title' => t('Site header'),
     '#group' => 'instant_vertical_tabs',
   );
 
-  $form['front_header']['front_header_line1'] = array(
+  $fields = field_info_instances('node', 'article');
+
+  array_walk($fields, function(&$field) {
+    $field = $field['field_name'];
+  });
+
+  $form['header']['header_image'] = array(
+    '#type' => 'select',
+    '#title' => t('Header image'),
+    '#options' => $fields,
+    '#description' => t('The field must be created for all types of material.'),
+    '#default_value' => theme_get_setting('header_image'),
+  );
+
+  $form['header']['front_header_line1'] = array(
     '#type' => 'textfield',
     '#title' => t('First line'),
     '#default_value' => theme_get_setting('front_header_line1'),
   );
 
-  $form['front_header']['front_header_line2'] = array(
+  $form['header']['header_line1'] = array(
+    '#type' => 'select',
+    '#title' => t('Field for first line'),
+    '#options' => $fields,
+    '#default_value' => theme_get_setting('header_line1'),
+  );
+
+  $form['header']['front_header_line2'] = array(
     '#type' => 'textfield',
     '#title' => t('Second line'),
     '#default_value' => theme_get_setting('front_header_line2'),
+    '#description' => t('Field for second line is title.'),
   );
 
-  $form['front_header']['front_header_line3'] = array(
+  $form['header']['front_header_line3'] = array(
     '#type' => 'textfield',
     '#title' => t('Third line'),
     '#default_value' => theme_get_setting('front_header_line3'),
+  );
+
+  $form['header']['header_line3'] = array(
+    '#type' => 'select',
+    '#title' => t('Field for third line'),
+    '#options' => $fields,
+    '#default_value' => theme_get_setting('header_line3'),
   );
 
   $form['social_buttons'] = array(
