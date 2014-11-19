@@ -86,9 +86,11 @@ function bootstrap_instant_preprocess_page(&$variables) {
   $social_url = array();
 
   foreach ($social_name as $name) {
-    $url = url(theme_get_setting('social_' . $name));
+    $uri = theme_get_setting('social_' . $name);
 
-    $social_url[$name] = $url;
+    if (!empty($uri)) {
+      $social_url[$name] = url($uri);
+    }
   }
 
   $variables['social_button'] = $social_url;
