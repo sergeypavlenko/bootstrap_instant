@@ -24,11 +24,22 @@ function bootstrap_instant_form_system_theme_settings_alter(&$form, $form_state,
     '#group' => 'instant_vertical_tabs',
   );
 
-  $fields = field_info_instances('node', 'article');
+  // List all fields.
+  $fields = field_info_fields();
 
-  array_walk($fields, function(&$field) {
-    $field = $field['field_name'];
-  });
+  if (!empty($fields)) {
+    foreach ($fields as $name => $field) {
+      if (count($field['bundles']) == 1) {
+        // Remove from list, fields for comment.
+        if (isset($field['bundles']['comment'])) {
+          unset($fields[$name]);
+          continue;
+        }
+      }
+
+      $fields[$name] = $name;
+    }
+  }
 
   $form['header']['header_image'] = array(
     '#type' => 'select',
