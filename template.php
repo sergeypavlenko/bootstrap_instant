@@ -102,16 +102,15 @@ function bootstrap_instant_preprocess_page(&$variables) {
 function bootstrap_instant_preprocess_node(&$variables) {
   if ($variables['type'] == 'article') {
     if ($variables['page']) {
-      $node = $variables['node'];
       $field_text = theme_get_setting('article_node_view_text');
       $field_images = theme_get_setting('article_node_view_images');
 
-      if (isset($node->{$field_text})) {
+      if (isset($variables['content'][$field_text])) {
         $variables['full_text_title'] = $variables['content'][$field_text]['#title'];
         $variables['full_text'] = render($variables['content'][$field_text]);
       }
 
-      if (isset($node->{$field_images})) {
+      if (isset($variables['content'][$field_images])) {
         $variables['full_images'] = render($variables['content'][$field_images]);
       }
     }
