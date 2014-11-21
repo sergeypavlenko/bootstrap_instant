@@ -50,5 +50,5 @@ settings[article_node_view_images] = 'field_image'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = assets/css/style.css
-stylesheets[all][] = assets/css/font-awesome.min.css
+stylesheets[all][] = assets/css/font-awesome.css
 stylesheets[all][] = assets/css/theme.css
