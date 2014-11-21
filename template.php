@@ -1,11 +1,6 @@
 <?php
 
 /**
- * @file
- * template.php
- */
-
-/**
  * Implements hook_preprocess_html().
  */
 function bootstrap_instant_preprocess_html(&$variables) {
@@ -31,8 +26,8 @@ function bootstrap_instant_preprocess_page(&$variables) {
 
     $field_header = theme_get_setting('header_image');
 
-    if (isset($node->{$field_header}['und'][0]['uri'])) {
-      $header_image = $node->{$field_header}['und'][0]['uri'];
+    if (isset($node->{$field_header}[LANGUAGE_NONE][0]['uri'])) {
+      $header_image = $node->{$field_header}[LANGUAGE_NONE][0]['uri'];
       $image_url = file_create_url($header_image);
       drupal_add_css('#headerwrap { background: url(' . $image_url . ') no-repeat center top; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }', array(
         'type' => 'inline',
@@ -46,12 +41,12 @@ function bootstrap_instant_preprocess_page(&$variables) {
       $line1 = theme_get_setting('header_line1');
       $line3 = theme_get_setting('header_line3');
 
-      if (isset($node->{$line1}['und'][0]['safe_value'])) {
-        $role = $node->{$line1}['und'][0]['safe_value'];
+      if (isset($node->{$line1}[LANGUAGE_NONE][0]['safe_value'])) {
+        $role = $node->{$line1}[LANGUAGE_NONE][0]['safe_value'];
       }
 
-      if (isset($node->{$line3}['und'][0]['safe_value'])) {
-        $type = $node->{$line3}['und'][0]['safe_value'];
+      if (isset($node->{$line3}[LANGUAGE_NONE][0]['safe_value'])) {
+        $type = $node->{$line3}[LANGUAGE_NONE][0]['safe_value'];
       }
     }
   }
