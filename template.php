@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Process and preprocess for theme.
+ */
 
 /**
  * Implements hook_preprocess_html().
