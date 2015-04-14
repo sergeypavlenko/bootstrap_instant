@@ -109,10 +109,10 @@
         <?php print render($page['header']); ?>
       </div>
     </div>
-    <! --/row -->
+    <!--/row -->
   </div>
   <!-- /container -->
-</div><! --/headerwrap -->
+</div><!--/headerwrap -->
 
 <?php print $messages; ?>
 
@@ -127,8 +127,8 @@
 
     <?php print render($page['content']); ?>
   </div>
-  <! --/row -->
-</div><! --/container -->
+  <!--/row -->
+</div><!--/container -->
 
 <?php if (!empty($social_button)): ?>
   <div id="social">
@@ -141,10 +141,10 @@
           </div>
         <?php endforeach; ?>
       </div>
-      <! --/row -->
+      <!--/row -->
     </div>
-    <! --/container -->
-  </div><! --/social -->
+    <!--/container -->
+  </div><!--/social -->
 <?php endif; ?>
 
 <div id="footerwrap">
@@ -163,4 +163,4 @@
       </div>
     </div>
   </div>
-</div><! --/footerwrap -->
+</div><!--/footerwrap -->
