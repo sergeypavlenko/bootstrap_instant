@@ -2,8 +2,6 @@ language: php
 
 php:
   - 5.3
-  - 5.4
-  - 5.5
 
 mysql:
   database: travis_ci_bootstrap_instant_test
@@ -12,6 +10,7 @@ mysql:
 
 before_install:
   - sudo apt-get update > /dev/null
+  - composer self-update
 
 install:
   # Install php packages required for running a web server from drush on php 5.3.
@@ -46,4 +45,4 @@ before_script:
   - drush runserver 127.0.0.1:8080 &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
-script: drush test-run --all --uri=http://127.0.0.1:8080
+script: drush test-run Bootstrap --uri=http://127.0.0.1:8080
