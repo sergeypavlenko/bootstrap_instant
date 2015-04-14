@@ -114,6 +114,8 @@
   <!-- /container -->
 </div><! --/headerwrap -->
 
+<?php print $messages; ?>
+
 <section id="works"></section>
 
 <div class="container">
