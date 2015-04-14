@@ -103,6 +103,8 @@ function bootstrap_instant_preprocess_page(&$variables) {
     $variables['header_box'] = $header;
   }
 
+
+  // Available social system.
   $social_name = array(
     'dribbble',
     'facebook',
@@ -134,11 +136,22 @@ function bootstrap_instant_preprocess_node(&$variables) {
       $field_text = theme_get_setting('article_node_view_text');
       $field_images = theme_get_setting('article_node_view_images');
 
+      // Check exists field.
       if (isset($variables['content'][$field_text])) {
+        // Display label in h4.
         $variables['full_text_title'] = $variables['content'][$field_text]['#title'];
+
+        // Hide field in h4, if in admin page field hide.
+        if ($variables['content'][$field_text]['#label_display'] == 'hidden') {
+          $variables['full_text_title'] = FALSE;
+        }
+
+        // Necessarily hide body label.
+        $variables['content'][$field_text]['#label_display'] = 'hidden';
         $variables['full_text'] = render($variables['content'][$field_text]);
       }
 
+      // Check images field. See template node--article.tpl.php.
       if (isset($variables['content'][$field_images])) {
         $variables['full_images'] = render($variables['content'][$field_images]);
       }

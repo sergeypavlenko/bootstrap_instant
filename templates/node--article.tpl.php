@@ -95,7 +95,10 @@
     <div class="content"<?php print $content_attributes; ?>>
       <div class="col-lg-8 col-lg-offset-2">
         <?php if (isset($full_text)): ?>
-          <h4><?php print $full_text_title; ?></h4>
+          <?php if ($full_text_title): ?>
+            <h4><?php print $full_text_title; ?></h4>
+          <?php endif; ?>
+
           <?php print $full_text; ?>
         <?php endif; ?>
       </div>
