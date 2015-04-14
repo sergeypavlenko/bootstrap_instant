@@ -15,8 +15,38 @@ function bootstrap_instant_preprocess_html(&$variables) {
       'content' => 'width=device-width, initial-scale=1',
     ),
   );
-
   drupal_add_html_head($viewport, 'viewport');
+
+  $ie8_responsive = array(
+    '#tag' => 'script',
+    '#attributes' => array(
+      'src' => drupal_get_path('theme', 'instant') . '/assets/js/ie8-responsive-file-warning.js',
+    ),
+    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+    '#weight' => 1000,
+  );
+  drupal_add_html_head($ie8_responsive, 'ie8_responsive_file_warning');
+
+  $html5shiv = array(
+    '#tag' => 'script',
+    '#attributes' => array(
+      'src' => 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js',
+    ),
+    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+    '#weight' => 999,
+  );
+  drupal_add_html_head($html5shiv, 'html5shiv');
+
+  $respond_js = array(
+    '#tag' => 'script',
+    '#attributes' => array(
+      'type' => 'text/javascript',
+      'src' => 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js',
+    ),
+    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+    '#weight' => 998,
+  );
+  drupal_add_html_head($respond_js, 'respond.js');
 }
 
 /**
