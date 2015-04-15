@@ -43,10 +43,10 @@ before_script:
   - cd travis_ci_bootstrap_instant_test/drupal
 
   - drush --yes dl bootstrap
-  - drush --yes pm-enable bootstrap
-  - drush --yes pm-enable bootstrap_instant
-  - drush --yes vset theme_default bootstrap_instant
-  - drush --yes vset admin_theme bartik
+#  - drush --yes pm-enable bootstrap
+#  - drush --yes pm-enable bootstrap_instant
+#  - drush --yes vset theme_default bootstrap_instant
+#  - drush --yes vset admin_theme bartik
 
   # Start a web server on port 8080, run in the background; wait for initialization.
   - drush runserver 127.0.0.1:8080 &
