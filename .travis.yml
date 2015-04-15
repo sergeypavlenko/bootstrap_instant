@@ -43,8 +43,10 @@ before_script:
   - cd travis_ci_bootstrap_instant_test/drupal
 
   - drush status theme
+  - drush --yes dl bootstrap
+  - drush --yes pm-enable bootstrap
   - drush --yes pm-enable bootstrap_instant
-#  - drush --yes vset theme_default bootstrap_instant
+  - drush --yes vset theme_default bootstrap_instant
   - drush --yes vset admin_theme bartik
   - drush status theme
 
