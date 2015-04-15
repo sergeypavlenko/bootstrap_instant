@@ -39,6 +39,7 @@ before_script:
 
   # Reference and enable travis_ci_drupal_module_example in build site.
   - ln -s $REPOSITORY_PATH travis_ci_bootstrap_instant_test/drupal/sites/all/themes/bootstrap_instant
+  - cd travis_ci_bootstrap_instant_test/drupal
   - drush --yes pm-enable bootstrap_instant
   - drush --yes vset theme_default bootstrap_instant
 
