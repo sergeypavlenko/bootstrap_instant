@@ -27,6 +27,9 @@ before_script:
   - git clone git://github.com/youngj/httpserver.git
   - mv httpserver /home/travis/.composer/vendor/drush/drush/lib
 
+  # Save path to repository dir.
+  - REPOSITORY_PATH=`pwd`
+
   # Navigate out of module directory to prevent blown stack by recursive module lookup.
   - cd ../..
 
@@ -35,8 +38,11 @@ before_script:
   - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/travis_ci_bootstrap_instant_test --enable=simpletest travis_ci_bootstrap_instant_test
 
   # Reference and enable travis_ci_drupal_module_example in build site.
-#  - ln -s $(readlink -e $(cd -)) travis_ci_bootstrap_instant_test/drupal/sites/all/themes/bootstrap_instant
-  - cd travis_ci_bootstrap_instant_test/drupal
+  - ln -s $REPOSITORY_PATH travis_ci_bootstrap_instant_test/drupal/sites/all/themes/bootstrap_instant
+  - cd travis_ci_bootstrap_instant_test/drupal/sites/all/themes
+  - ls -lah
+  - cd bootstrap_instant
+  - ls -lah
 #  - drush --yes pm-enable bootstrap_instant
 #  - drush --yes vset theme_default bootstrap_instant
   - drush cc all
