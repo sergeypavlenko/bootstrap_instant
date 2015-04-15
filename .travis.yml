@@ -45,7 +45,7 @@ before_script:
   - drush status theme
   - drush --yes pm-enable bootstrap_instant
   - drush --yes vset theme_default bootstrap_instant
-  - drush --yes vset admin_theme seven
+  - drush --yes vset admin_theme bartik
   - drush status theme
 
   # Start a web server on port 8080, run in the background; wait for initialization.
