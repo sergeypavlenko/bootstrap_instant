@@ -38,10 +38,14 @@ before_script:
   - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/travis_ci_bootstrap_instant_test --enable=simpletest travis_ci_bootstrap_instant_test
 
   # Reference and enable travis_ci_drupal_module_example in build site.
-  - ln -s $REPOSITORY_PATH travis_ci_bootstrap_instant_test/drupal/sites/all/themes/bootstrap_instant
+#  - ln -s $REPOSITORY_PATH travis_ci_bootstrap_instant_test/drupal/sites/all/themes/bootstrap_instant
+  - mv $REPOSITORY_PATH travis_ci_bootstrap_instant_test/drupal/sites/all/themes
   - cd travis_ci_bootstrap_instant_test/drupal
+
+  - drush status theme
   - drush --yes pm-enable bootstrap_instant
   - drush --yes vset theme_default bootstrap_instant
+  - drush status theme
 
   # Start a web server on port 8080, run in the background; wait for initialization.
   - drush runserver 127.0.0.1:8080 &
