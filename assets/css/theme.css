@@ -3,6 +3,15 @@
   text-transform: uppercase;
 }
 
+#headerwrap h1 {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 h1,
 h2,
 h3,
