@@ -82,6 +82,10 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
+  <?php if (!$page): ?>
+    <?php print render($title_suffix); ?>
+  <?php endif; ?>
+
   <?php if ($teaser): ?>
     <div class="content"<?php print $content_attributes; ?>>
       <?php
