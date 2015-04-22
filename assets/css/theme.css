@@ -21,3 +21,7 @@ h6,
 .field-portfolio-images .field-item {
   margin-bottom: 20px;
 }
+
+.tabs--primary li {
+  display: inline-block;
+}

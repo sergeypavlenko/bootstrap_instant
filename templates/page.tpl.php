@@ -114,6 +114,14 @@
   <!-- /container -->
 </div><!--/headerwrap -->
 
+<?php if ($tabs): ?>
+  <div class="container">
+    <div class="row centered">
+      <div class="tabs"><?php print render($tabs); ?></div>
+    </div>
+  </div>
+<?php endif; ?>
+
 <?php print $messages; ?>
 
 <section id="works"></section>
